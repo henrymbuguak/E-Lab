@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="eng">
+ <head>
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <title>Guardian of The Patient</title>
+   <meta name="description" content="E Lap Web App">
+   <link rel="icon" href="favicon.png">
+   <!-- Latest compiled and minified bootstrap CSS -->
+   <link href="css/bootstrap.min.css" rel="stylesheet" >
+
+   <!-- Doctor Dashboard CSS -->
+   <link href="css/dash.css" rel="stylesheet">
+
+   <!-- Optional Theme -->
+   <link  href="css/bootstrap-theme.min.css" rel="stylesheet">
+     <style>
+     body {
+          padding-top:40px;
+          
+     }
+     </style>
+
+ </head>
+    
+<body>
+ 
+<nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="index.html">E-Lab</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="doctor.html">Dashboard</a></li>
+            <li><a href="notification.html">Notification</a></li>
+            <li><a href="#">Settings</a></li>
+            <li><a href="#">Profile</a></li>
+            <li><a href="#">Logout</a></li>
+          </ul>
+          <form class="navbar-form navbar-right">
+            <input type="text" class="form-control" placeholder="Search...">
+          </form> <!-- End form -->
+        </div>
+      </div>
+    </nav> <!-- End Nav -->
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-3 col-md-2 sidebar">
+          <ul class="nav nav-sidebar">
+            <li class="active"><a href="doctor.html">Overview <span class="sr-only">(current)</span></a></li>
+            
+            <li><a href="newpatient.html">New Patient</a></li>
+            <li><a href="guardian.html">Guardian Details</a></li>
+            <li><a href="patient.html">Sent Lab Request</a></li>
+            <li><a href="#">Export</a></li>
+          </ul>
+          
+        </div> <!-- End Sidebar -->
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+          <h1 class="page-header">Guardian of The Patient</h1>
+                <div class="col-lg-8">
+                     <form action="" class="form-horizontal">
+                           <div class="form-group">
+                                <label for="user-name" class="col-lg-2
+                                 control-label">Patient ID</label>
+                                
+                                 
+                                
+                            <div class="col-lg-10">
+                                 <input type="text" class="form-control"
+                                  id="user-name" placeholder="Enter Patient ID" required>
+                            </div>
+                           
+
+                           </div> <!-- End Form Group -->
+
+                           <div class="form-group">
+                                <label for="user-name" class="col-lg-2
+                                 control-label">First Name</label>
+                                
+                                 
+                                
+                            <div class="col-lg-10">
+                                 <input type="text" class="form-control"
+                                  id="user-name" placeholder="Enter First Name" required>
+                            </div>
+                           
+
+                           </div> <!-- End Form Group -->
+
+
+                           <div class="form-group">
+                                <label for="user-name" class="col-lg-2
+                                 control-label">Last Name</label>
+                                
+                                 
+                                
+                            <div class="col-lg-10">
+                                 <input type="text" class="form-control"
+                                  id="user-name" placeholder="Enter Last Name" required>
+                            </div>
+                           
+
+                           </div> <!-- End Form Group -->
+
+                           <div class="form-group">
+                                <label for="user-name" class="col-lg-2
+                                 control-label">Middle Name</label>
+                                
+                                 
+                                
+                            <div class="col-lg-10">
+                                 <input type="text" class="form-control"
+                                  id="user-name" placeholder="Enter Middle Name">
+                            </div>
+                           
+
+                           </div> <!-- End Form Group -->
+                           <div class="form-group">
+                                <label for="user-email" class="col-lg-2
+                                 control-label">Email</label>
+                                
+                                 
+                                
+                            <div class="col-lg-10">
+                                 <input type="text" class="form-control"
+                                  id="user-email" placeholder="Enter Your Email" required>
+                            </div>
+
+                           </div> <!-- End Form Group -->
+
+                           <div class="form-group">
+                                <label for="user-phone" class="col-lg-2
+                                 control-label">Phone No</label>
+                                
+                                 
+                                
+                            <div class="col-lg-10">
+                                 <input type="text" class="form-control"
+                                  id="user-phone" placeholder="Enter Phone No" required>
+                            </div>
+
+                           </div> <!-- End Form Group -->
+
+
+                          <div class="form-group">
+                                <label for="user-date" class="col-lg-2
+                                 control-label">Birth Date</label>
+                                
+                                 
+                            <div class="input-group date form_date col-lg-10" data-date="" data-date-format="dd MM yyyy" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd">
+                    <input class="form-control" size="16" type="text" value="" readonly>
+                    <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
+					<span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+                </div>
+				<input type="hidden" id="dtp_input2" value="" /><br/>    
+                            
+
+                           </div> <!-- End Form Group -->
+
+                       <div class="form-group">
+                                <label for="user-allergy" class="col-lg-2 control-label">Allergy Details</label>
+                                
+                                 
+                                
+                            <div class="col-lg-10">
+                                 <textarea name="user-message" id="user-message"
+                                  class="form-control" cols="20" rows="5" placeholder="Enter Patient Allergy Details">
+     
+                                 </textarea>                                 
+                            </div>
+
+                           </div> <!-- End Form Group -->
+
+                           <div class="form-group">
+                                <label for="user-diagnosis" class="col-lg-2 control-label">Possible Diagnosis</label>
+                                
+                                 
+                                
+                            <div class="col-lg-10">
+                                 <textarea name="user-message" id="user-message"
+                                  class="form-control" cols="20" rows="5" placeholder="Enter Patient Possible Diagnosis" required>
+     
+                                 </textarea>                                 
+                            </div>
+
+                           </div> <!-- End Form Group -->
+
+                          <div class="form-group">
+                                <label for="user-visit" class="col-lg-2
+                                 control-label">Visit Type</label>
+                                
+                                 
+                                
+                            <div class="col-lg-10">
+                                 <select class="form-control" multipletitle="Choose one of the following...">
+                                         <option>Choose one of the following</option>
+                                         <option>Inpatient</option>
+                                         <option>Outpatient</option>
+                                 </select>
+                            </div>
+
+                           </div> <!-- End Form Group -->
+                          
+                        <div class="form-group">
+                                <label for="user-date" class="col-lg-2
+                                 control-label">Visit Date</label>
+                                
+                                 
+                            <div class="input-group date form_date col-lg-10" data-date="" data-date-format="dd MM yyyy" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd">
+                    <input class="form-control" size="16" type="text" value="" readonly>
+                    <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
+					<span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+                </div>
+				<input type="hidden" id="dtp_input2" value="" /><br/>    
+                            
+
+                           </div> <!-- End Form Group -->
+
+                        <div class="form-group">
+                                <label for="user-test" class="col-lg-2
+                                 control-label">Test to Done</label>
+                                
+                                 
+                                
+                            <div class="col-lg-10">
+                                 <label class="checkbox-inline">
+                                        <input type="checkbox" value="">Blood Test
+                                 </label>
+                                 <label class="checkbox-inline">
+                                        <input type="checkbox" value="">Urinalysis
+                                 </label>
+                                 <label class="checkbox-inline">
+                                        <input type="checkbox" value="">Biopsy
+                                 </label>
+                                 <label class="checkbox-inline">
+                                        <input type="checkbox" value="">Flu Test
+                                 </label>
+                                 <label class="checkbox-inline">
+                                        <input type="checkbox" value="">Lipid Profile Test
+                                 </label>
+                            </div>
+
+                           </div> <!-- End Form Group -->
+
+                          <div class="form-group">
+                                <label for="user-visit" class="col-lg-2
+                                 control-label">Laboratory</label>
+                                
+                                 
+                                
+                            <div class="col-lg-10">
+                                 <select class="form-control" multipletitle="Choose one of the following...">
+                                         <option>Select where test should be done</option>
+                                         <option>Laboratory 1</option>
+                                         <option>Laboratory 2</option>
+                                         <option>Laboratory 3</option>
+                                         <option>Laboratory 4</option>
+                                         <option>Laboratory 5</option>
+                                 </select>
+                            </div>
+
+                           </div> <!-- End Form Group -->
+
+                          <div class="form-group">
+                               <div class="col-lg-10 col-lg-offset-2">
+                                    <button type="submit" class="btn
+                                     btn-primary">Submit</button>
+                               </div>
+                          </div>
+                     </form>
+                </div>
+          
+          </div> <!-- End container -->
+
+
+
+   <!-- JQuery Mininfied version -->
+   <script src="js/jquery.min.js"></script>
+
+   <!-- Angular 2 minified JavaScript -->
+  <script src="js/angular2.min.js"></script> 
+
+   <!-- Latest compiled and minified bootstrap JavaScript -->
+   <script src="js/bootstrap.min.js"></script>
+
+   <!-- bootstrap date Picker JavaScript -->
+   <script src="js/bootstrap-datetimepicker.min.js"></script>
+
+   <script type="text/javascript">
+           $('.form_date').datetimepicker({
+        language:  'fr',
+        weekStart: 1,
+        todayBtn:  1,
+		autoclose: 1,
+		todayHighlight: 1,
+		startView: 2,
+		minView: 2,
+		forceParse: 0
+    });
+   </script>
+</body>
+</html>
+
+

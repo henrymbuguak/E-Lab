@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="eng"  ng-app="angularTable">
+ <head>
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link rel="icon" href="favicon.png">
+   <title>E-Lab Request</title>
+   <meta name="description" content="E Lap Web App">
+   <!-- Latest compiled and minified bootstrap CSS -->
+   <link href="css/bootstrap.min.css" rel="stylesheet" >
+
+   <!-- Doctor Dashboard CSS -->
+   <link href="css/dash.css" rel="stylesheet">
+
+   <!-- Table CSS -->
+   <link href="css/style.css" rel="stylesheet">
+
+   <!-- Optional Theme -->
+   <link  href="css/bootstrap-theme.min.css" rel="stylesheet">
+     <style>
+     body {
+          padding-top:40px;
+          
+     }
+     </style>
+
+ </head>
+    
+<body>
+ 
+<nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="index.html">E-Lab</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="#">Dashboard</a></li>
+            <li><a href="notification2.html">Notification</a></li>
+            <li><a href="#">Settings</a></li>
+            <li><a href="#">Profile</a></li>
+            <li><a href="#">Logout</a></li>
+          </ul>
+          <form class="navbar-form navbar-right">
+            <input type="text" class="form-control" placeholder="Search...">
+          </form> <!-- End form -->
+        </div>
+      </div>
+    </nav> <!-- End Nav -->
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-3 col-md-2 sidebar">
+          <ul class="nav nav-sidebar">
+            <li class="active"><a href="technician.html">E-Lab Request <span class="sr-only">(current)</span></a></li>
+            
+            <li><a href="patientsms.html">Patient SMS Code</a></li>
+            <li><a href="payment.html">Mode of Payment</a></li>
+            <li><a href="results.html">Enter Details of Test Results</a></li>
+            <li><a href="labresult.html">Submitted Lab Result</a></li>
+            
+          </ul>
+          
+        </div>
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+          <h1 class="page-header">Dashboard</h1>
+    
+       <!-- Anglar table -->
+    
+       <div role="main" class="container theme-showcase">
+      <div class="" style="margin-top:10px;">
+        <div class="col-lg-12">
+			<div class="page-header">
+				<h2 id="tables">Search Patient in The System</h2>
+			</div>
+			<div class="bs-component" ng-controller="listdata">
+				<div class="alert alert-info">
+					<p>Search using Phone No: {{sortKey}}</p>
+					<p>Search using names: {{reverse}}</p>
+					<p>Search using ID number : {{search}}</p>
+				</div>
+				<form class="form-inline">
+					<div class="form-group">
+						<label >Search</label>
+						<input type="text" ng-model="search" class="form-control" placeholder="Search">
+					</div>
+				</form>
+				<table  class="table table-striped table-hover">
+					<thead>
+						<tr>
+							<th ng-click="sort('id')">Id
+								<span class="glyphicon sort-icon" ng-show="sortKey=='id'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
+							</th>
+							<th ng-click="sort('first_name')">First Name
+								<span class="glyphicon sort-icon" ng-show="sortKey=='first_name'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
+							</th>
+							<th ng-click="sort('last_name')">Last Name
+								<span class="glyphicon sort-icon" ng-show="sortKey=='last_name'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
+							</th>
+							<th ng-click="sort('middle_name')">Middle Name
+								<span class="glyphicon sort-icon"
+ng-show="sortKey=='middle_name'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
+							</th>
+                     <th ng-click="sort('email')">Email
+								<span class="glyphicon sort-icon"
+ng-show="sortKey=='email'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
+							</th>
+
+                   <th ng-click="sort('insurance_number')">Insurance Number
+								<span class="glyphicon sort-icon"
+ng-show="sortKey=='insurance_number'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
+							</th>
+
+                    
+                   <th ng-click="sort('mobile_number')">Mobile Number
+								<span class="glyphicon sort-icon"
+ng-show="sortKey=='mobile_number'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
+							</th>
+
+                   <th ng-click="sort('birth_day')">Date of Birth
+								<span class="glyphicon sort-icon"
+ng-show="sortKey=='birth_day'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
+							</th>
+
+                 <th ng-click="sort('id_number')">ID Number
+								<span class="glyphicon sort-icon"
+ng-show="sortKey=='id_number'" ng-class="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
+							</th>
+
+						</tr>
+					</thead>
+					<tbody>
+						<tr dir-paginate="user in users|orderBy:sortKey:reverse|filter:search|itemsPerPage:5">
+							<td>{{user.id}}</td>
+							<td>{{user.first_name}}</td>
+							<td>{{user.last_name}}</td>
+							<td>{{user.middle_name}}</td>
+                            <td>{{user.email}}</td>
+                            <td>{{user.insurance_number}}</td>
+                            <td>{{user.mobile_number}}</td>
+                            <td>{{user.birth_day}}</td>
+                            <td>{{user.id_number}}</td>
+						</tr>
+					</tbody>
+				</table> 
+				<dir-pagination-controls
+					max-size="5"
+					direction-links="true"
+					boundary-links="true" >
+				</dir-pagination-controls>
+			</div>
+		</div>
+	
+      </div>
+    </div>
+
+       
+
+
+
+       <!-- End Angular Table -->   
+          </div>
+ 
+
+
+   <!-- JQuery Mininfied version -->
+   <script src="js/jquery.min.js"></script>
+  
+  
+ 
+   <!-- Angular 2 minified JavaScript -->
+  <script src="js/angular.js"></script> 
+  
+    <!-- Table Js -->
+   <script src="app/app.js"></script>
+   
+   <!-- Pagination js -->
+   <script src="js/dirPagination.js"></script>
+
+   <!-- Latest compiled and minified bootstrap JavaScript -->
+   <script src="js/bootstrap.min.js"></script>
+</body>
+</html>
+
